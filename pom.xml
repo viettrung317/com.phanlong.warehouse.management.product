@@ -3,4 +3,32 @@
   <groupId>com.phanlong.warehouse.management.product</groupId>
   <artifactId>com.phanlong.warehouse.management.product</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging> <!-- Important! -->
+
+    <modules>
+        <module>
+        	com.phanlong.warehouse.management.product.backend
+        </module>
+        <module>
+        	com.phanlong.warehouse.management.product.client
+        </module>
+    </modules>
+    
+    <!-- Shared dependency versions -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- Spring Boot version shared across modules -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>3.1.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <properties>
+        <java.version>17</java.version> <!-- Adjust to your JDK version -->
+    </properties>
 </project>
